@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stdbool.h": "c",
+        "algorithm": "c",
+        "format": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "span": "c"
+    }
+}
