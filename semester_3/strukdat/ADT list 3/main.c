@@ -2,19 +2,21 @@
 // Nama Program: main.c
 // Deskripsi   : aplikasi driver ADT list berkait representasi fisik pointer
 // NIM/Nama    : 24060124120024/Ruth Septriana Sipangkar
-// Tanggal     : 13 November 2025
+// Tanggal     : 20 November 2025
 // ================================================================================
-#include <stdio.h>
+#include "list3.h"
+#include <stddef.h>
 #include <stdlib.h>
-#include "list2.h"
+#include <stdio.h>
+
 int main()
 { //kamus
   address P, A, B;
   infotype V;
-  List2 Senarai;
+  List3 Senarai;
   
   //algoritma
-  printf("================== SENARAI 2 START! ===================\n");
+  printf("================== SENARAI 3 START! ===================\n");
 
   CreateList(&Senarai);
   printf("\nCreate Senarai!\n");
@@ -33,6 +35,13 @@ int main()
 
   InsertVFirst(&Senarai, 'B');
   printf("\nAdd B as First!\n");
+  PrintList(Senarai);
+  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+  printf("NbElm       : %d\n", NbElm(Senarai));
+
+  DeleteVFirst(&Senarai, &V);
+  printf("\nDelete '%c' from First!\n", V);
   PrintList(Senarai);
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
   printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
@@ -66,12 +75,21 @@ int main()
   printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
   printf("NbElm       : %d\n", NbElm(Senarai));
 
+  DeleteVLast(&Senarai, &V);
+  printf("\nDelete '%c' from Last!\n", V);
+  PrintList(Senarai);
+  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+  printf("NbElm       : %d\n", NbElm(Senarai));
+
   printf("\n============== SENARAI MORE FUNCTIONS ==============\n");
 
   InsertVLast(&Senarai, 'E');
-  InsertVLast(&Senarai, 'A');
+  InsertVLast(&Senarai, 'D');
   InsertVLast(&Senarai, 'C');
   InsertVLast(&Senarai, 'D');
+  InsertVLast(&Senarai, 'A');
+  InsertVLast(&Senarai, 'B');
   printf("\nSenarai Upgrade Version!\n");
   PrintList(Senarai);
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
@@ -114,51 +132,49 @@ int main()
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
   printf("NbElm       : %d\n", NbElm(Senarai));
 
-  UpdateX(&Senarai, 'A', 'X');
-  printf("\nChange (the first) A into X!\n", V);
-  PrintList(Senarai);
-  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
-  printf("NbElm       : %d\n", NbElm(Senarai));
-
   UpdateX(&Senarai, 'D', 'Y');
   printf("\nChange (the first) D into Y!\n", V);
   PrintList(Senarai);
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
   printf("NbElm       : %d\n", NbElm(Senarai));
 
+  DeleteX(&Senarai, 'E');
+  printf("\nDeleteX E!\n");
+  PrintList(Senarai);
+  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+  printf("NbElm       : %d\n", NbElm(Senarai));
+
+  DeleteX(&Senarai, 'B');
+  printf("\nDeleteX B!\n");
+  PrintList(Senarai);
+  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+  printf("NbElm       : %d\n", NbElm(Senarai));
+
   DeleteX(&Senarai, 'C');
-  printf("\nDeleteX (the first) C!\n");
+  printf("\nDeleteX C!\n");
   PrintList(Senarai);
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
   printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
   printf("NbElm       : %d\n", NbElm(Senarai));
 
-  DeleteX(&Senarai, 'X');
-  printf("\nDeleteX (the first) X!\n");
-  PrintList(Senarai);
-  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
-  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
-  printf("NbElm       : %d\n", NbElm(Senarai));
-
-  DeleteX(&Senarai, 'Y');
-  printf("\nDeleteX (the first) Y!\n");
-  PrintList(Senarai);
-  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
-  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
-  printf("NbElm       : %d\n", NbElm(Senarai));
-
-  Invers(&Senarai);
-  printf("\nInvers Senarai!\n");
-  PrintList(Senarai);
-  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
-  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
-  printf("NbElm       : %d\n", NbElm(Senarai));
+  // Invers(&Senarai);
+  // printf("\nInvers Senarai!\n");
+  // PrintList(Senarai);
+  // printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+  // printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+  // printf("NbElm       : %d\n", NbElm(Senarai));
 
   printf("\n============ SENARAI MORE-MORE FUNCTIONS ============\n");
 
-  InsertVLast(&Senarai, 'E');
-  InsertVLast(&Senarai, 'A');
+  DeleteVLast(&Senarai, &V);
+  DeleteVLast(&Senarai, &V);
+  DeleteVLast(&Senarai, &V);
   InsertVLast(&Senarai, 'D');
+  InsertVLast(&Senarai, 'C');
+  InsertVLast(&Senarai, 'D');
+  InsertVLast(&Senarai, 'A');
   printf("\nSenarai Upgrade Version!\n");
   PrintList(Senarai);
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
@@ -181,14 +197,6 @@ int main()
   printf("Frequency of E in senarai : %f\n", FrekuensiX(Senarai, 'E'));
   printf("Frequency of X in senarai : %f\n", FrekuensiX(Senarai, 'X'));
 
-  printf("\n");
-  SearchAllX(Senarai, 'A');
-  SearchAllX(Senarai, 'B');
-  SearchAllX(Senarai, 'C');
-  SearchAllX(Senarai, 'D');
-  SearchAllX(Senarai, 'E');
-  SearchAllX(Senarai, 'X'); 
-
   printf("\nMode in Senarai : %c\n", Modus(Senarai));
   printf("Mode count      : %d\n", MaxMember(Senarai));
 
@@ -210,32 +218,46 @@ int main()
   printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
   printf("NbElm       : %d\n", NbElm(Senarai));
 
+  InsertVAfterX(&Senarai, 'G', 'C');
+  printf("\nAdd C after G!\n");
+  PrintList(Senarai);
+  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+  printf("NbElm       : %d\n", NbElm(Senarai));
+
   InsertVBeforeX(&Senarai, 'G', 'B');
-  printf("\nAdd B before D!\n");
+  printf("\nAdd B before G!\n");
   PrintList(Senarai);
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
   printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
   printf("NbElm       : %d\n", NbElm(Senarai));
 
-  DeleteVAfterX(&Senarai, 'C', &V);
-  printf("\nDelete %c after C!\n", V);
+  InsertVBeforeX(&Senarai, 'D', 'A');
+  printf("\nAdd A before D!\n");
   PrintList(Senarai);
   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
   printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
   printf("NbElm       : %d\n", NbElm(Senarai));
 
-  DeleteVBeforeX(&Senarai, 'B', &V);
-  printf("\nDelete %c before B!\n", V);
-  PrintList(Senarai);
-  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
-  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
-  printf("NbElm       : %d\n", NbElm(Senarai));
+  // DeleteVAfterX(&Senarai, 'C', &V);
+  // printf("\nDelete %c after C!\n", V);
+  // PrintList(Senarai);
+  // printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+  // printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+  // printf("NbElm       : %d\n", NbElm(Senarai));
 
-  DeleteAllX(&Senarai, 'E');
-  printf("\nDelete all E!\n");
-  PrintList(Senarai);
-  printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
-  printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
-  printf("NbElm       : %d\n", NbElm(Senarai));
-  return 0;
+  printf("\nSearchAllX:\n");
+  SearchAllX(Senarai, 'A');
+  SearchAllX(Senarai, 'B');
+  SearchAllX(Senarai, 'C');
+  SearchAllX(Senarai, 'D');
+  SearchAllX(Senarai, 'E');
+  SearchAllX(Senarai, 'X'); 
+
+//   DeleteVBeforeX(&Senarai, 'B', &V);
+//   printf("\nDelete %c before B!\n", V);
+//   PrintList(Senarai);
+//   printf("IsEmptyList : %s\n", IsEmptyList(Senarai) ? "True" : "False");
+//   printf("IsOneElm    : %s\n", IsOneElm(Senarai) ? "True" : "False");
+//   printf("NbElm       : %d\n", NbElm(Senarai));
 }

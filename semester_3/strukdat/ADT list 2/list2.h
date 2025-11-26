@@ -1,8 +1,8 @@
 // ================================================================================
-// Nama Program: list1.c
+// Nama Program: list2.c
 // Deskripsi   : definisi dan spesifikasi ADT list berkait representasi fisik pointer
 // NIM/Nama    : 24060124120024/Ruth Septriana Sipangkar
-// Tanggal     : 6 November 2025
+// Tanggal     : 13 November 2025
 // ================================================================================
 #ifndef LIST2_H
 #define LIST2_H

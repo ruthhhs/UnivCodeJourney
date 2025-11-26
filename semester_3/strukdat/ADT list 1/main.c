@@ -1,5 +1,5 @@
 // ===============================================================================
-// Nama Program: list1.c
+// Nama Program: main.c
 // Deskripsi   : aplikasi driver ADT list berkait representasi fisik pointer
 // NIM/Nama    : 24060124120024/Ruth Septriana Sipangkar
 // Tanggal     : 6 November 2025

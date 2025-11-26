@@ -67,7 +67,7 @@ def SearchXTree (x, T) :
 T = makePN('Yuki', [makePN('Asuna', []), makePN('Akame', [makePN('Kuro', [makePN('Suzu', [])]), makePN('Frieren', [makePN('Fern', []), makePN('Stark', [])]), makePN('Kana', [])]), makePN('Shiro', [])])
 print(SearchXTree('Frieren', T))
 
-print(SearchXTree("Raffi", makePN("Ridho",[makePN("Silvani",[makePN("Nuha",[]), makePN("Syahrafi",[makePN("Ega", [])]), makePN("Noci",[])]), makePN("Rendi",[makePN("Fikhrul",[])]), makePN("Ruth",[makePN("Aji",[])]), makePN("Eko",[makePN("Raffi",[])])])))
+print(SearchXTree("R", makePN("Ridho",[makePN("Silvani",[makePN("Nuha",[]), makePN("Syahrafi",[makePN("Ega", [])]), makePN("Noci",[])]), makePN("Rendi",[makePN("Fikhrul",[])]), makePN("Ruth",[makePN("Aji",[])]), makePN("Eko",[makePN("Raffi",[])])])))
 
 # APLIKASI
 # print(eval(input()))

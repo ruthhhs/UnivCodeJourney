@@ -1,9 +1,4 @@
-#Nama File: list.py
-#Deskripsi: berisi type dan operasi list of list
-#Pembuat: Ruth Septriana Sipangkar 24060124120024
-#Tanggal: 19/11/2024
-
-from ListOfList import *
+from praktikum9 import *
 
 #DEFINISI DAN SPESIFIKASI KONSTRUKTOR
 def makePN(A,PN):
@@ -26,9 +21,9 @@ def isOneElmt(PN):
 def PrintTreeNAryHelp(T, sisa, indent):
     print(indent + str(Akar(T)))
     if not isEmpty(Anak(T)):
-        PrintTreeNAryHelp(FirstList(Anak(T)), TailList(Anak(T)), indent + '\t')
+        PrintTreeNAryHelp(firstList(Anak(T)), tailList(Anak(T)), indent + '\t')
     if not isEmpty(sisa):
-        PrintTreeNAryHelp(FirstList(sisa), TailList(sisa), indent)
+        PrintTreeNAryHelp(firstList(sisa), tailList(sisa), indent)
 
 def PrintTreeNAry(T):
     PrintTreeNAryHelp(T, [], '')
@@ -54,35 +49,15 @@ def NbNElmtChild(PN):
         return 0
     
     # Jika ada Anak, rekursif pada Anak pertama dan sisa Anak-Anak
-    return NbNElmt(FirstList(PN)) + NbNElmtChild(TailList(PN))
-
-def NbNDaun(PN):
-    # Basis: Jika pohon kosong
-    if isTreeNEmpty(PN):
-        return 0
-    
-    # Jika pohon adalah daun (Anak kosong)
-    if isOneElmt(PN) and isTreeNEmpty(Anak(PN)):
-        return 1
-    
-    # Rekursi pada Akar dan Anak-Anak
-    return NbNDaunChild(Anak(PN))
-
-# Fungsi tambahan untuk menghitung jumlah daun pada sisa Anak-Anak
-def NbNDaunChild(PN):
-    # Basis: Jika tidak ada Anak
-    if isTreeNEmpty(PN):
-        return 0
-    
-    # Jika ada Anak, rekursif pada Anak pertama dan sisa Anak-Anak
-    return NbNDaun(FirstList(PN)) + NbNDaunChild(TailList(PN))
+    return NbNElmt(firstList(PN)) + NbNElmtChild(tailList(PN))
 
 #APLIKASI
-T = makePN(2,[])
-PrintTreeNAry(makePN(2,[]))
+T = makePN('A',[makePN('b',[makePN('c',[makePN('g',[])])]), makePN('d',[makePN('e',[])]), makePN('f',[])])
+PrintTreeNAry(T)
 print(isTreeNEmpty(T))
 print(isOneElmt(T))
-T2 = makePN('A',[makePN('A',[makePN('A',[])]), makePN('A',[])])
-PrintTreeNAry(T2)
-print(NbNElmt(T2))
-print(NbNDaun(T2))
+print(NbNElmt(T))
+T1 = makePN("Ridho",[makePN("Silvani",[makePN("Nuha",[]), makePN("Syahrafi",[makePN("Syair", [])]),
+makePN("Umar",[])]), makePN("Rendi",[makePN("Fikhrul",[])]), makePN("Ruth",[makePN("Aji",[])]),
+ makePN("Eko",[makePN("Raffi",[])])])
+PrintTreeNAry(T1)

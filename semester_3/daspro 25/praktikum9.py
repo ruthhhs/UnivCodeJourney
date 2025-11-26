@@ -134,7 +134,7 @@ def RemberList(x, S):
             return RemberList(x, tailList(S))
         else:
             return konsLo(firstList(S), RemberList(x, tailList(S)))
-print(RemberList(3,[4,3,[2,3]]))
+# print(RemberList(3,[4,3,[2,3]]))
 
 # MaxLOL: List of List -> elemen
 # {MaxLOL(S) mengembalikan elemen maksimum di dalam list of list S.
@@ -155,9 +155,9 @@ def NBElmtAtom(S):
         return 1 + NBElmtAtom(tailList(S))
     else:
         return NBElmtAtom(tailList(S))
-print(NBElmtAtom([4,5,6,[8,9,10],[12,0],8]))
-print(NBElmtAtom([4,15,6,[8,9],10,[12],8]))
-print(NBElmtAtom([[8,9,10]]))
+# print(NBElmtAtom([4,5,6,[8,9,10],[12,0],8]))
+# print(NBElmtAtom([4,15,6,[8,9],10,[12],8]))
+# print(NBElmtAtom([[8,9,10]]))
 
 # NBElmtList: List of List -> integer
 # {NBElmtList(S) mengembalikan banyaknya elemen list of list S yang berupa list.
