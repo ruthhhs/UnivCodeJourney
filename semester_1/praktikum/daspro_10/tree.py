@@ -78,11 +78,18 @@ def NbNDaunChild(PN):
     return NbNDaun(FirstList(PN)) + NbNDaunChild(TailList(PN))
 
 #APLIKASI
-T = makePN(2,[])
-PrintTreeNAry(makePN(2,[]))
-print(isTreeNEmpty(T))
-print(isOneElmt(T))
-T2 = makePN('A',[makePN('A',[makePN('A',[])]), makePN('A',[])])
-PrintTreeNAry(T2)
-print(NbNElmt(T2))
-print(NbNDaun(T2))
+# T = makePN(2,[])
+# PrintTreeNAry(makePN(2,[]))
+# print(isTreeNEmpty(T))
+# print(isOneElmt(T))
+# T2 = makePN('A',[makePN('B',[makePN('C',[])]), makePN('D',[])])
+# PrintTreeNAry(T2)
+# print(NbNElmt(T2))
+# print(NbNDaun(T2))
+T3 = makePN("Silvani",
+            [makePN("Nuha",[]), 
+             makePN("Rendi",[makePN("Fikhrul",[makePN("Syahrafi",[])])]),
+             makePN("Ruth",[makePN("Aji",[])]),
+             makePN("Eko",[makePN("Raffi",[])])])
+PrintTreeNAry(T3)
+print(NbNDaun(T3))

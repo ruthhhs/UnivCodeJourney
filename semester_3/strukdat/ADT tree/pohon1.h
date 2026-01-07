@@ -12,8 +12,8 @@
 #define NIL NULL
 #define akar(P)   (P)->info
 #define info(P)   (P)->info
-#define left(P)   (P)->left 
-#define right(P)  (P)->right 
+#define left(P)   (P)->left
+#define right(P)  (P)->right
 typedef enum { false, true } boolean;
 /* typedef infotype = character */
 typedef char infotype; /* elemen bertipe character */

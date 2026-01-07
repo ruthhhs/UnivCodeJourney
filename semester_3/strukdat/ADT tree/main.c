@@ -2,18 +2,21 @@
 // Nama Program: main.c
 // Deskripsi   : ADT bintree berkait dengan representasi fisik pointer
 // NIM/Nama    : 24060124120024/Ruth Septriana Sipangkar
-// Tanggal     : 27 November 2025
+// Tanggal     : 27 November 2025 - 4 Desember 2025
 // ================================================================================
 #include "pohon1.h"
+#include "pohon2.h"
 
 int main()
 {//kamus
     bintree B, kiri, kanan;
+    bintree C, D, E;
+    infotype X;
 
  //algirtma
      printf("========== POHON FUNCTION ==========\n");
      printf("\nBUAT POHON\n");
-    B = Tree('T',
+     B = Tree('Z',
              Tree('I',
                   Tree('N',NIL,NIL),
                   Tree('F',
@@ -73,12 +76,13 @@ int main()
      printf("\nPohon sesudah:\n");
      PrintPrefix(B);
 
+     printf("\nSearchX ('K') : %s\n", SearchX(B, 'A') ? "True" : "False");
+     printf("SearchX ('C') : %s\n", SearchX(B, 'B') ? "True" : "False");
+
+
      printf("\n\n========== POHON MORE FUNCTION ==========\n");
 
-     printf("\nPrintPrefixRingkas\n");
-     PrintPrefixRingkas(B);
-
-     printf("\n\nCountX (A)   : %d\n", CountX(B, 'A'));
+     printf("\nCountX (A)   : %d\n", CountX(B, 'A'));
      printf("CountX (M)   : %d\n", CountX(B, 'M'));
      printf("CountX (E)   : %d\n", CountX(B, 'E'));
 
@@ -125,6 +129,141 @@ int main()
      PrintConsonant(B);
      printf("\n");
 
+     printf("\nPrintPrefixRingkas\n");
+     PrintPrefixRingkas(B);
 
+     printf("\n\nModus     : %c\n", Modus(B));
+
+     printf("\n========== POHON 2 FUNCTION ==========\n");
+
+    printf("\n\nTampilkan pohon dengan indentasi:\n");
+    PrintTreeInden(B, 2);
+    
+    printf("\nPrintLevel (1)   :");
+    PrintLevel(B, 1);
+    printf("\n");
+    printf("PrintLevel (4)   :");
+    PrintLevel(B, 4);
+    printf("\n");
+    printf("PrintLevel (2)   :");
+    PrintLevel(B, 2);
+    printf("\n");
+    printf("PrintLevel (0)   :");
+    PrintLevel(B, 0);
+    printf("\n");
+
+    printf("\nUbah semua I menjadi i\nPohon sebelum:\n");
+    PrintTreeInden(B, 2);
+    UpdateAllX(&B, 'I', 'i');
+    printf("\nPohon sesudah:\n");
+    PrintTreeInden(B, 2);
+
+    printf("\n\nBuat pohon kosong baru:");
+    C = NIL;
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nAddDaunTerkiri (A):\n");
+    AddDaunTerkiri(&C, 'A');
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nAddDaunTerkiri (B):\n");
+    AddDaunTerkiri(&C, 'B');
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nAddDaunTerkiri (C):\n");
+    AddDaunTerkiri(&C, 'C');
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nAddDaun (D) Kanan A:\n");
+    AddDaun(C, 'A', 'D', false);
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nAddDaun (E) Kanan B:\n");
+    AddDaun(C, 'B', 'E', false);
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nAddDaun (F) Kanan D:\n");
+    AddDaun(C, 'D', 'F', false);
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+    
+    printf("\nDelDaun (E):\n");
+    DelDaun(&C, 'E');
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+    
+    DelDaunTerkiri(&C, &X);
+    printf("\nDelDaunTerkiri (%c):\n", X);
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nminTree    : %c\n", minTree(C));
+    printf("maxTree    : %c\n", maxTree(C));
+
+    printf("\nInsertX (C):\n");
+    InsertX(&C, 'C');
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nInsertX (E):\n");
+    InsertX(&C, 'E');
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\nDeleteX (A):\n");
+    DeleteX(&C, 'A');
+    PrintTreeInden(C, 2);
+    printf("\nNbElm : %d\n", NbElm(C));
+
+    printf("\n========== BALANCED TREE ==========\n");
+
+    printf("\nBuat pohon seimbang baru (5)\nMasukkan 5 node: \n");
+    D = BuildBalanceTree(5);
+    PrintTreeInden(D, 2);
+    printf("\nNbElm : %d\n", NbElm(D));
+    printf("IsBalanceTree: %s\n", IsBalanceTree(D) ? "True" : "False");
+
+    printf("\n========== BINARY SEARCH TREE ==========\n");
+
+    printf("\nBuat pohon binary search baru:\n");
+    E = Tree('5',
+            Tree('2',
+                Tree('1',
+                    NIL,
+                    Tree('3', NIL, NIL)
+                ),
+                NIL
+            ),
+            Tree('7',
+                NIL,
+                Tree('9',
+                    Tree('8', NIL, NIL),
+                    NIL
+                )
+            )
+        );
+
+    PrintTreeInden(E, 2);
+    printf("\nNbElm : %d\n", NbElm(E));
+    printf("BSearch (3) : %s\n", BSearch(E, '3') ? "True" : "False");
+
+    printf("\nMenambah simpul ke BST (6) :\n");
+    InsSearch(E, '6');
+    PrintTreeInden(E, 2);
+    printf("\nNbElm : %d\n", NbElm(E));
+
+    printf("\nHapus simpul daari BST (7) :\n");
+    DelBtree(&E, '7');
+    PrintTreeInden(E, 2);
+    printf("\nNbElm : %d\n", NbElm(E));
+
+
+     
     return 0;
 }

@@ -242,9 +242,8 @@ float FrekuensiX(List1 L, infotype X){
 	// kamus
 
 	// algoritma
-	if(!IsEmptyList(L)){
-		return (float)CountX(L, X)/NbElm(L);
-	}
+	if (NbElm(L) == 0) return 0.0;
+	return (float) CountX(L, X) / NbElm(L);
 }
 
 void SearchAllX(List1 L, infotype X){
@@ -344,7 +343,7 @@ infotype Modus(List1 L){
 }
 
 int NbModus(List1 L){
-    // kamus lokal
+	// kamus lokal
     address p, q;
     infotype modus;
     int count, maxCount, tempCount;

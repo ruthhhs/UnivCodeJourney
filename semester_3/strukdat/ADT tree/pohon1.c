@@ -23,9 +23,9 @@ void DealokasiTree (bintree *P){
     // kamus
 
     // algoritma
-    if (P != NIL){
-        free(P);
-        P = NIL;
+    if (*P != NIL){
+        free(*P);
+        *P = NIL;
     }
 }
 
@@ -153,8 +153,12 @@ void UpdateX(bintree *P, infotype X, infotype Y){
         if(info(*P)==X){
             info(*P) = Y;
         } else{ // X belum ketemu
-            UpdateX(&left(*P), X, Y);
-            UpdateX(&right(*P), X, Y);
+            if (SearchX(left(*P), X)) {
+                UpdateX(&left(*P), X, Y);
+            }
+            else { // cari di kanan
+                UpdateX(&right(*P), X, Y);
+            }
         }
     }
 }
@@ -198,12 +202,27 @@ boolean IsSkewRight (bintree P){
 
 void PrintPrefixRingkas(bintree P){
     if (P == NIL) {
-        printf("");
-    } else {
-        printf("%c(",info(P));
-        PrintPrefixRingkas(left(P));
-        printf(",");
-        PrintPrefixRingkas(right(P));
+        return; // kosong = tidak dicetak
+    }
+
+    // cetak info node
+    printf("%c", info(P));
+
+    // Cek apakah P bukan daun
+    if (left(P) != NIL || right(P) != NIL){
+        printf("(");
+
+        // cetak kiri jika ada
+        if (left(P) != NIL){
+            PrintPrefixRingkas(left(P));
+        }
+
+        // cetak koma hanya jika ada anak kanan
+        if (right(P) != NIL){
+            printf(",");
+            PrintPrefixRingkas(right(P));
+        }
+
         printf(")");
     }
 }
@@ -315,4 +334,44 @@ void PrintConsonant(bintree P){
     }
 }
 
-char Modus(bintree P);
+char Modus(bintree P){
+    int max, temp;
+    char mod;
+
+    if(!IsEmptyTree(P)){
+        mod = info(P);
+        max = CountX(P, mod);
+
+        if(!IsEmptyTree(left(P))){ // cek kiri
+            temp = CountX(P, info(left(P)));
+            if(temp > max){
+                max = temp;
+                mod = info(left(P));
+            }
+            // rekursif
+            temp = CountX(P, Modus(left(P)));
+            if(temp > max){
+                max = temp;
+                mod = Modus(left(P));
+            }
+        }
+
+        if(!IsEmptyTree(right(P))){ // cek kanan
+            temp = CountX(P, info(right(P)));
+            if(temp > max){
+                max = temp;
+                mod = info(right(P));
+            }
+            // rekursif
+            temp = CountX(P, Modus(right(P)));
+            if(temp > max){
+                max = temp;
+                mod = Modus(right(P));
+            }
+        }
+        return mod;
+
+    } else { // kosong
+        return '#';
+    }
+}

@@ -138,8 +138,8 @@ def atomInLoL(S) :
 def maxElmt(S) :
     return maxNb(atomInLoL(S))
 # Contoh aplikasi:
-print(maxElmt([4, 5, 6, [8,9,10], [12,0], 8])) #menghasilkan 12
-print(maxElmt([4, 15, 6, [8,9,10], [12,0], 8])) #menghasilkan 15
+# print(maxElmt([4, 5, 6, [8,9,10], [12,0], 8])) #menghasilkan 12
+# print(maxElmt([4, 15, 6, [8,9,10], [12,0], 8])) #menghasilkan 15
 
 # NBElmtAtom: list of list -> integer
 # NBElmtAtom(S) mengembalikan banyaknya elemen list of list S yang berupa atom
