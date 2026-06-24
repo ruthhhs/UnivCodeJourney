@@ -1,0 +1,3 @@
+contoh = "a"
+
+print(contoh)

@@ -1,0 +1,15 @@
+[submodule "semester_4/TubesAI"]
+	path = semester_4/TubesAI
+	url = https://github.com/ruthhhs/Lunelle-AI-Assistant.git
+[submodule "semester_4/PBO-tugas-kelompok"]
+	path = semester_4/PBO-tugas-kelompok
+	url = https://github.com/ruthhhs/Geometricks
+[submodule "semester_4/TubesASA"]
+	path = semester_4/TubesASA
+	url = https://github.com/ruthhhs/knapsack-analysis
+[submodule "semester_4/GTI/tubes"]
+	path = semester_4/GTI/tubes
+	url = https://github.com/ruthhhs/Maze3D
+[submodule "semester_4/PraktikumPBO"]
+	path = semester_4/PraktikumPBO
+	url = https://github.com/ruthhhs/PraktikumPBOC2
