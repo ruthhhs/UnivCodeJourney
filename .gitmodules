@@ -31,3 +31,6 @@
 [submodule "semester_5/pbp-ppk/ppk-praktikum-mobile"]
 	path = semester_5/pbp-ppk/ppk-praktikum-mobile
 	url = https://github.com/ruthhhs/ppk-praktikum-mobile
+[submodule "semester_5/pbp-ppk/pre-praktikum"]
+	path = semester_5/pbp-ppk/pre-praktikum
+	url = https://github.com/yowsevanz/pre-praktikum
