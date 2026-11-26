@@ -1,3 +1,0 @@
-contoh = "a"
-
-print(contoh)

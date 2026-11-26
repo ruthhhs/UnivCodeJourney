@@ -1,0 +1,64 @@
+# Project: maze
+# Makefile created by Dev-C++ 5.7.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o geometri.o imageloader.o hud.o cammove.o coltex.o maze.o tree.o lighting.o hole.o semak.o spike.o firework.o
+LINKOBJ  = main.o geometri.o imageloader.o hud.o cammove.o coltex.o maze.o tree.o lighting.o hole.o semak.o spike.o firework.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -mwindows -lglut32 -lglu32 -lopengl32 -lwinmm -lgdi32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = maze.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) -DGLUT_STATIC
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+geometri.o: geometri.cpp
+	$(CPP) -c geometri.cpp -o geometri.o $(CXXFLAGS)
+
+imageloader.o: imageloader.cpp
+	$(CPP) -c imageloader.cpp -o imageloader.o $(CXXFLAGS)
+
+hud.o: hud.cpp
+	$(CPP) -c hud.cpp -o hud.o $(CXXFLAGS)
+
+cammove.o: cammove.cpp
+	$(CPP) -c cammove.cpp -o cammove.o $(CXXFLAGS)
+
+coltex.o: coltex.cpp
+	$(CPP) -c coltex.cpp -o coltex.o $(CXXFLAGS)
+
+maze.o: maze.cpp
+	$(CPP) -c maze.cpp -o maze.o $(CXXFLAGS)
+
+tree.o: tree.cpp
+	$(CPP) -c tree.cpp -o tree.o $(CXXFLAGS)
+
+lighting.o: lighting.cpp
+	$(CPP) -c lighting.cpp -o lighting.o $(CXXFLAGS)
+
+hole.o: hole.cpp
+	$(CPP) -c hole.cpp -o hole.o $(CXXFLAGS)
+
+semak.o: semak.cpp
+	$(CPP) -c semak.cpp -o semak.o $(CXXFLAGS)
+
+spike.o: spike.cpp
+	$(CPP) -c spike.cpp -o spike.o $(CXXFLAGS)
+
+firework.o: firework.cpp
+	$(CPP) -c firework.cpp -o firework.o $(CXXFLAGS)

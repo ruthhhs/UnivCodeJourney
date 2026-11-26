@@ -31,37 +31,37 @@ int main(){
     printQueue(A);
     viewQueue(A);
 
-    printf("Enqueue\n");
-    enqueue(&A, 'm');
-    printQueue(A);
-    viewQueue(A);
+//     printf("Enqueue\n");
+//     enqueue(&A, 'm');
+//     printQueue(A);
+//     viewQueue(A);
 
-    createQueue(&B);
-    printf("Enqueue\n");
-    enqueue(&B, 'y');
-    enqueue(&B, 'e');
-    enqueue(&B, 'y');
-    printQueue(B);
-    viewQueue(B);
+//     createQueue(&B);
+//     printf("Enqueue\n");
+//     enqueue(&B, 'y');
+//     enqueue(&B, 'e');
+//     enqueue(&B, 'y');
+//     printQueue(B);
+//     viewQueue(B);
 
-    enqueue2Q(&A, &B, 'i');
-    printf("Enqueue2\n");
-    printQueue(A);
-    viewQueue(A);
-    printQueue(B);
-    viewQueue(B);
+//     enqueue2Q(&A, &B, 'i');
+//     printf("Enqueue2\n");
+//     printQueue(A);
+//     viewQueue(A);
+//     printQueue(B);
+//     viewQueue(B);
 
-    dequeue2Q(&A, &B, &x);
-    printf("Dequeue2 : %c\n", x);
-    printQueue(A);
-    viewQueue(A);
-    printQueue(B);
-    viewQueue(B);
+//     dequeue2Q(&A, &B, &x);
+//     printf("Dequeue2 : %c\n", x);
+//     printQueue(A);
+//     viewQueue(A);
+//     printQueue(B);
+//     viewQueue(B);
 
-    dequeue2Q(&A, &B, &x);
-    printf("Dequeue2 : %c\n", x);
-    printQueue(A);
-    viewQueue(A);
-    printQueue(B);
-    viewQueue(B);
+//     dequeue2Q(&A, &B, &x);
+//     printf("Dequeue2 : %c\n", x);
+//     printQueue(A);
+//     viewQueue(A);
+//     printQueue(B);
+//     viewQueue(B);
 }

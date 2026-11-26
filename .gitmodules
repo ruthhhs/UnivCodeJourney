@@ -7,9 +7,12 @@
 [submodule "semester_4/TubesASA"]
 	path = semester_4/TubesASA
 	url = https://github.com/ruthhhs/knapsack-analysis
-[submodule "semester_4/GTI/tubes"]
-	path = semester_4/GTI/tubes
-	url = https://github.com/ruthhhs/Maze3D
 [submodule "semester_4/PraktikumPBO"]
 	path = semester_4/PraktikumPBO
 	url = https://github.com/ruthhhs/PraktikumPBOC2
+[submodule "semester_4/tubesGTI"]
+	path = semester_4/tubesGTI
+	url = https://github.com/ruthhhs/Maze3D.git
+[submodule "semester_4/TubesGTI"]
+	path = semester_4/TubesGTI
+	url = https://github.com/ruthhhs/Maze3D

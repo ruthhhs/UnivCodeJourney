@@ -36,9 +36,13 @@ void printQueue(tqueue Q){
 }
 
 void viewQueue(tqueue Q){
-    printf("View queue  : |");
-    for(int i=1; i<=sizeQueue(Q); i++){
-        printf(" %c", Q.wadah[i]);
+    printf("View queue : |");
+    for(int i=1; i<6; i++){
+        if(Q.wadah[i] != '-'){
+            printf(" %c", Q.wadah[i]);
+        } else {
+            printf(" -");
+        }
     }
     printf(" |\n");
 }
@@ -67,12 +71,12 @@ void enqueue(tqueue *Q, char e){
   
 void dequeue(tqueue *Q, char *e){
     if(!isEmptyQueue(*Q)){
-        *e = infoHead(*Q);
-            for(int i=1; i<=sizeQueue(*Q); i++){
-                Q->wadah[i] = Q->wadah[i+1];
-            }
-            Q->wadah[Q->tail] = '-';
-            Q->tail --;
+        *e = (*Q).wadah[head(*Q)];
+        for(int i = head(*Q); i <= tail(*Q) - 1; i++){
+            (*Q).wadah[i] = (*Q).wadah[i+1];
+        }
+        (*Q).wadah[tail(*Q)] = '-';
+        (*Q).tail--;
     }
 }
 
