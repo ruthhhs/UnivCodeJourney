@@ -16,3 +16,18 @@
 [submodule "semester_4/TubesGTI"]
 	path = semester_4/TubesGTI
 	url = https://github.com/ruthhhs/Maze3D
+[submodule "semester_5/iot_gamesrps"]
+	path = semester_5/iot_gamesrps
+	url = https://github.com/Joshuaaaaa21/IoT_GameRPS
+[submodule "semester_5/pbp-ppk/PPK-Hackathon-01"]
+	path = semester_5/pbp-ppk/PPK-Hackathon-01
+	url = https://github.com/Lescovar42/PPK-Hackathon-01
+[submodule "semester_5/pbp-ppk/PPK-Hackathon-02"]
+	path = semester_5/pbp-ppk/PPK-Hackathon-02
+	url = https://github.com/yowsevanz/PPK-Hackathon-02
+[submodule "semester_5/pbp-ppk/ppk-tubes-buana"]
+	path = semester_5/pbp-ppk/ppk-tubes-buana
+	url = https://github.com/syazra/ppk-tubes
+[submodule "semester_5/pbp-ppk/ppk-praktikum-mobile"]
+	path = semester_5/pbp-ppk/ppk-praktikum-mobile
+	url = https://github.com/ruthhhs/ppk-praktikum-mobile
